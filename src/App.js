@@ -31,9 +31,7 @@ export default class App extends Component {
     return (
       <div>
         <Container>
-          <Row>
             <Navi />
-          </Row>
           <Row>
             <Col cs="3">
               <CategoryList

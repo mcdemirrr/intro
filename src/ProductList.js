@@ -1,7 +1,10 @@
 import React, { Component } from "react";
-import { Table } from "react-bootstrap";
+import { Table, Button } from "react-bootstrap";
 
 export default class ProductList extends Component {
+  addToCard = (product) => {
+    // alert(product.productName);
+  };
 
   render() {
     return (
@@ -20,16 +23,24 @@ export default class ProductList extends Component {
             </tr>
           </thead>
           <tbody>
-          {this.props.products.map(product=>(
-              <tr  key={product.id}>
-              <th scope="row">{product.id}</th>
-              <td>{product.productName}</td>
-              <td>{product.unitPrice}</td>
-              <td>{product.quantityPerUnit}</td>
-              <td>{product.unitsInStock}</td>
-            </tr>
-    ))}
-            
+            {this.props.products.map((product) => (
+              <tr key={product.id}>
+                <th scope="row">{product.id}</th>
+                <td>{product.productName}</td>
+                <td>{product.unitPrice}</td>
+                <td>{product.quantityPerUnit}</td>
+                <td>{product.unitsInStock}</td>
+                <td>
+                  <Button
+                    onClick={() => this.addToCard(product)}
+                    color="info"
+                    outline
+                  >
+                    add
+                  </Button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </Table>
       </div>
