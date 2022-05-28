@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { Table, Button } from "react-bootstrap";
 
 export default class ProductList extends Component {
-  addToCard = (product) => {
-    // alert(product.productName);
-  };
 
   render() {
     return (
@@ -32,7 +29,7 @@ export default class ProductList extends Component {
                 <td>{product.unitsInStock}</td>
                 <td>
                   <Button
-                    onClick={() => this.addToCard(product)}
+                    onClick={() => this.props.addToCard(product)}
                     color="info"
                     outline
                   >
