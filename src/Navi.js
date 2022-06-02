@@ -16,7 +16,7 @@ export default class Navi extends Component {
           <Nav className="me-auto">
             <Nav.Link href="#home">Component</Nav.Link>
             <Nav.Link href="https://github.com/mcdemirrr">Github</Nav.Link>
-            <CartSummary cart={this.props.cart}/>
+            <CartSummary cart={this.props.cart} removeFromCart={this.props.removeFromCart}/>
           </Nav>
         </Navbar.Collapse>
       </Container>
