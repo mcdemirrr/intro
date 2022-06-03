@@ -4,6 +4,9 @@ import Navi from "./Navi";
 import ProductList from "./ProductList";
 import { Container, Row, Col } from "reactstrap";
 import alertify from "alertifyjs";
+import { Routes, Route } from "react-router-dom";
+import NotFound from "./NotFound";
+import CartList from "./CartList";
 export default class App extends Component {
   state = { currentCategory: "", products: [], cart: [] };
 
@@ -34,11 +37,12 @@ export default class App extends Component {
       newCart.push({ product: product, quantity: 1 });
     }
     this.setState({ cart: newCart });
-    alertify.success(product.productName + "added to cart!",2)
+    alertify.success(product.productName + "added to cart!", 2);
   };
   removeFromCart = (product) => {
     let newCart = this.state.cart.filter((c) => c.product.id !== product.id);
     this.setState({ cart: newCart });
+    alertify.error(product.productName + "removed from cart!", 2)
   };
 
   render() {
@@ -57,12 +61,31 @@ export default class App extends Component {
               />
             </Col>
             <Col cs="9">
-              <ProductList
-                addToCard={this.addToCard}
-                products={this.state.products}
-                currentCategory={this.state.currentCategory}
-                info={productInfo}
-              />
+              <Routes>
+                <Route
+                  exact
+                  path="/"
+                  element={
+                    <ProductList
+                      addToCard={this.addToCard}
+                      products={this.state.products}
+                      currentCategory={this.state.currentCategory}
+                      info={productInfo}
+                    />
+                  }
+                />
+                <Route
+                  exact
+                  path="/cart"
+                  element={
+                    <CartList
+                      cart={this.state.cart}
+                      removeFromCart={this.removeFromCart}
+                    />
+                  }
+                />
+                <Route element={<NotFound />} />
+              </Routes>
             </Col>
           </Row>
         </Container>

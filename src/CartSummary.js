@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { NavDropdown, Badge } from "react-bootstrap";
 import { NavItem, NavLink } from "reactstrap";
+import { Link } from "react-router-dom";
 
 export default class cartSummary extends Component {
   renderSummary() {
@@ -16,7 +17,9 @@ export default class cartSummary extends Component {
             {cartItem.product.productName}
           </NavDropdown.Item>
         ))}
-        <NavDropdown.Item href="#action/3.4">Reset</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.4">
+        <Link to="cart">Go to cart</Link>
+        </NavDropdown.Item>
       </NavDropdown>
     );
   }

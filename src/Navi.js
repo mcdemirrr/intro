@@ -10,7 +10,7 @@ export default class Navi extends Component {
       <div>
       <Navbar bg="light">
       <Container>
-        <Navbar.Brand href="#home">Northwind App</Navbar.Brand>
+        <Navbar.Brand href="http://localhost:3001/">Northwind App</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
