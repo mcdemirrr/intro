@@ -8,6 +8,8 @@ import { Routes, Route } from "react-router-dom";
 import NotFound from "./NotFound";
 import CartList from "./CartList";
 import FormDemo1 from "./FormDemo1";
+import FormDemo2 from "./FormDemo2";
+
 export default class App extends Component {
   state = { currentCategory: "", products: [], cart: [] };
 
@@ -86,6 +88,8 @@ export default class App extends Component {
                   }
                 />
                 <Route path="/form1" element={<FormDemo1 />}/>
+                <Route path="/form2" element={<FormDemo2 />}/>
+
                 <Route element={<NotFound />} />
               </Routes>
             </Col>

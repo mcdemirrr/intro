@@ -7,7 +7,7 @@ export default class FormDemo1 extends Component {
     // this.setState({ userName: event.target.value });
     let name = event.target.name;
     let value = event.target.value;
-    this.setState({[name]:value})
+    this.setState({ [name]: value });
   };
   onSubmitHandler = (event) => {
     event.preventDefault();

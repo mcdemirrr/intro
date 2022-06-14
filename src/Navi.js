@@ -15,7 +15,10 @@ export default class Navi extends Component {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
                 <Nav.Link>
-                  <Link to="form1">Component</Link>
+                  <Link to="form1">Form Demo 1</Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link to="form2">Form Demo 2</Link>
                 </Nav.Link>
                 <Nav.Link href="https://github.com/mcdemirrr">Github</Nav.Link>
                 <CartSummary
